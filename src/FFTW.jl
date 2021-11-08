@@ -68,7 +68,9 @@ end
 
 include("fft.jl")
 include("dct.jl")
-
+@static if fftw_provider == "mkl"
+    include("mkl_patch.jl")
+end
 include("precompile.jl")
 _precompile_()
 
