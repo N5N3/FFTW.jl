@@ -141,7 +141,7 @@ true_fftd3_m3d[:,:,2] .= -15
 
         # The following capabilities are FFTW only.
         # They are not available in MKL, and hence do not test them.
-        if fftw_provider == "fftw"
+        #if fftw_provider == "fftw"
             @testset "FFTW-specific" begin
                 ifft3_fft3_m3d = fi(f(m3d))
 
@@ -180,7 +180,7 @@ true_fftd3_m3d[:,:,2] .= -15
                     @test pifft!d3_fftd3_m3d[i] ≈ m3d[i]
                 end
             end
-        end  # if fftw_provider == "fftw"
+        #end  # if fftw_provider == "fftw"
 
     end
 end
